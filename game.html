@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css">
+  <title>Square Jump — Jogo</title>
+  <style>
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: #1e1e1e
+    }
+
+    .game-wrap {
+      width: 700px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="game-wrap">
+    <header class="topbar">
+      <button onclick="location.href='index.html'" class="secondary">Voltar</button>
+    </header>
+
+    <main>
+      <div class="game">
+        <div id="Player"></div>
+        <div id="obstacle"></div>
+      </div>
+      <p style="color:#eaffff;text-align:center;margin-top:8px">⬆️Use A para pular.⬆️</p>
+    </main>
+    <aside class="players-panel">
+      <h3 style="color:#eaffff;text-align:center">Gerenciar Jogadores</h3>
+      <form id="playerForm" class="player-form">
+        <input id="playerName" placeholder="Nome" required />
+        <input id="playerScore" placeholder="Pontuação" type="number" min="0" value="0" />
+        <div style="display:flex;gap:8px;justify-content:center;margin-top:8px">
+          <button type="submit" class="primary">Salvar</button>
+          <button type="button" id="startButton" class="primary">Start</button>
+          <button type="button" id="playerClear" class="secondary">Limpar</button>
+        </div>
+      </form>
+      <div id="playersList" class="players-list"></div>
+    </aside>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+
+</html>

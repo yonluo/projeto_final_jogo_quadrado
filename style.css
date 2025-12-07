@@ -1,0 +1,260 @@
+body {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  text-align: center;
+  background-color: #1e1e1e;
+}
+
+h1 {
+  color: rgb(0, 255, 255);
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 900px;
+  margin: 12px auto;
+  padding: 0 12px;
+}
+
+.nav-btn {
+  margin-left: 8px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: none;
+  background: rgba(255, 255, 255, 0.08);
+  color: #eaffff;
+  cursor: pointer;
+}
+
+.nav-btn:hover {
+  opacity: 0.9;
+}
+
+.screens {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 12px;
+}
+
+.screen {
+  display: none;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 16px;
+  border-radius: 8px;
+  color: #eaffff;
+}
+
+.screen.active {
+  display: block;
+}
+
+.home-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 10px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.02),
+    rgba(255, 255, 255, 0.01)
+  );
+  width: 360px;
+}
+
+.home-title {
+  font-size: 28px;
+  color: #00ffff;
+  margin: 6px 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.home-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 12px;
+  align-items: center;
+}
+
+.home-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.home-actions button {
+  margin: 0;
+}
+
+#screen-home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 120px);
+}
+
+.primary {
+  background: #00ffff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: #eaffff;
+}
+
+.players-list {
+  margin-top: 12px;
+  text-align: left;
+}
+
+.player-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 8px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.player-actions button {
+  margin-left: 6px;
+}
+
+.player-item.selected {
+  background: rgba(0, 255, 255, 0.06);
+  border-left: 3px solid #00ffff;
+}
+
+.player-quality {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: #111;
+}
+
+.quality-bronze {
+  background: #d6a36a;
+  color: #2b1606;
+}
+
+.quality-silver {
+  background: #cfcfcf;
+  color: #111;
+}
+
+.quality-gold {
+  background: #ffd166;
+  color: #4a2d00;
+}
+
+.player-badge {
+  display: inline-block;
+  margin-left: 8px;
+  background: rgba(0, 255, 255, 0.06);
+  color: #00ffff;
+  padding: 2px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+}
+
+.player-actions button.secondary {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 4px 8px;
+  border-radius: 6px;
+  color: #eaffff;
+}
+
+.player-actions button.secondary:hover {
+  opacity: 0.95;
+}
+
+.player-actions button[disabled] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.game {
+  width: 600px;
+  height: 200px;
+  background-color: aqua;
+  border: 2px solid;
+  margin: 30px auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#Player {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(0, 46, 253);
+  position: absolute;
+  bottom: 00px;
+  left: 50px;
+}
+
+#obstacle {
+  width: 30px;
+  height: 30px;
+  background-color: rgb(250, 12, 12);
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  animation: moveobstacle 1.5s linear infinite;
+}
+
+.obstacle-badge {
+  position: absolute;
+  left: 50%;
+  top: -18px;
+  transform: translateX(-50%);
+  background: #ffea88;
+  color: #000;
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 12px;
+}
+
+@keyframes moveobstacle {
+  0% {
+    right: -30px;
+  }
+
+  100% {
+    right: 600px;
+  }
+}
+
+.jump {
+  animation: jump 0.5s ease-out;
+}
+
+@keyframes jump {
+  0% {
+    bottom: 0;
+  }
+
+  50% {
+    bottom: 80px;
+  }
+
+  100% {
+    bottom: 0;
+  }
+}
